@@ -18,5 +18,18 @@ By default, NSMBU's Save 1 is selected, you can switch of save file by clicking 
 
 When you're done, click File -> Save or File -> Save As... to save your edited save file.
 
+# To-do
+-Figure out undocumented fields
+
+-Edit Challenge Save Data
+
+-Edit Boost Rush Save Data
+
+-Edit Coin Edit Save Data
+
+-Edit Play Report Settings
+
+-Edit Mii Save Data
+
 # Support
 If you need any help, found any bugs or anything else that requires my help, you can contact me on discord: RedStoneMatt#2826
