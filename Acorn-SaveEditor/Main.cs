@@ -281,15 +281,21 @@ namespace Acorn_SaveEditor
 
         private void inventoryItemPictureBox_Click(object sender, EventArgs e)
         {
-            byte[] nextItem = { 1, 2, 3, 5, 0, 6, 7, 8, 9, 0xE, 0, 0, 0, 0, 0 };
-
             PictureBox thisItem = (sender as PictureBox);
             int itemID = Convert.ToInt32(thisItem.Name.Substring(13, 1));
             int currentItem = thisSave.profiles[fileIndex].inventoryItems[itemID];
 
             thisSave.profiles[fileIndex].inventoryItems[itemID] = nextItem[currentItem];
-
-            thisItem.Image = itemImages[nextItem[currentItem]];
+            thisItem.Image = itemImages[getImgIndexFromItem(currentItem)];
+        }
+        
+        //clearer and less expensive, get better at coding dude
+        private void getImgIndexFromItem(int item)
+        {
+            return (currentItem < 3 || (currentItem > 4 && currentItem < 9) ? currentItem + 1 :
+            currentItem == 3 ? 5 :
+            currentItem == 4 ? 0 :
+            currentItem == 9 ? 0xE : 0;
         }
 
         private void buttonLayoutPictureBox_Click(object sender, EventArgs e)
